@@ -38,12 +38,40 @@ img {
 select {
     display: block;
     width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
 }
 
+#food {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#food > div {
+    flex-basis: calc(50% - 10px);
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.item {
+    opacity: 0.50;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.item.active {
+    opacity: 1;
+}
+
+/*active is the class we are choosing in javascript*/
 
 /* Tablet/Desktop overrides */
 
-@media(min-width: 681px) {}
+@media(min-width: 681px) {
+    #food > div {
+        flex-basis: calc(33% - 10px);
+    }
+}
 
 @media(min-width: 729px) {
     /* Any adjustments for desktop and larger go here. Note these styles will be applied to anything 729px or larger -- so desktop */
